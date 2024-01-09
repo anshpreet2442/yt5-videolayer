@@ -1,158 +1,55 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>CLANDESTINA</title>
-  <meta name="viewport" content="width=868"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.css'>
-<link rel='stylesheet' href='https://michael-zhigulin.github.io/mz-codepen-projects/Material%20Design%20UI%20Audio%20Player/font/font.css'><link rel="stylesheet" href="./style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#FFA500"> <!-- Set the theme color to orange (#FFA500) -->
-   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2907/2907253.png">
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="container">
-  <div class="player">
-    <div class="like waves-effect waves-light">
-      <i class="icon-heart"></i>
-    </div>
-    <div class="mask"></div>
-    <ul class="player-info info-one">
-      <li>Clandestina</li>
-      <li>Uploaded by Anshpreet</li>
-      <li>3:02</li>
-     
-       
-    </ul>
-    <ul class="player-info info-two">
-      <li>Clandestine</li>
-      <li>Source Code By Anshpreet</li>
-      <li><span id="duration"></span><i> / </i>3:02</li>
-    </ul>
-    <div id="play-button" class="unchecked">
-      <i class="icon icon-play"></i>
-    </div>
-    <div class="control-row">
-      <div class="waves-animation-one"></div>
-      <div class="waves-animation-two"></div>
-      <div id="pause-button">
-        <i class="icon"></i>
-      </div>
-      <div class="seek-field">
-        <input id="audioSeekBar" min="0" max="334" step="1" value="0" type="range" oninput="audioSeekBar()" onchange="this.oninput()">
-      </div>
-      <div class="volume-icon">
-        <i class="icon-volume-up"></i>
-      </div>
-      <div class="volume-field">
-        <input type="range" min="0" max="100" value="100" step="1" oninput="audio.volume = this.value/100" onchange="this.oninput()">
-      </div>
-    </div>
-  </div>
-   <button class="custom-btn btn-15">Topmovies.com</button>
-</div>
-<audio id="audio-player" ontimeupdate="SeekBar()" ondurationchange="CreateSeekBar()" preload="auto" loop>
-  <source src="https://djpunjab.ink/siteuploads/files/sfd3/1464/Clandestina%20Slowed%20Reverb-(DJPunjab).mp3" type="audio/ogg">
-      <source src="https://djpunjab.ink/siteuploads/files/sfd3/1464/Clandestina%20Slowed%20Reverb-(DJPunjab).mp3" type="audio/mpeg">
-</audio>
-<!-- partial -->
-  <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.5/waves.min.js'></script><script  src="./script.js"></script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-    /* Style for the context menu */
-    #custom-menu {
-      display: none;
-      position: absolute;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 5px 0;
-    }
-    /* Style for the context menu items */
-    #custom-menu button {
-      display: block;
-      width: 100%;
-      padding: 5px 10px;
-      text-align: left;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Context Menu Container -->
-<div id="custom-menu">
-  <button id="redirect-button">Go to Audio Sync YouTube</button>
-</div>
-
+<meta charset="utf-8">
+<title>YT API HTML5</title>
+<meta name="generator" content="ANSHPREET">
+<link href="plyr.css" rel="stylesheet">
+  <meta name="description" content="Page by Anshpreet">
+<link href="Untitled1.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="plyr.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  // Function to show the custom context menu
-  function showCustomMenu(event) {
-    event.preventDefault();
-    const customMenu = document.getElementById('custom-menu');
-    customMenu.style.display = 'block';
-    customMenu.style.left = event.pageX + 'px';
-    customMenu.style.top = event.pageY + 'px';
-  }
-
-  // Function to handle button click (redirect to YouTube URL)
-  document.getElementById('redirect-button').addEventListener('click', function() {
-    window.location.href = 'https://www.youtube.com/@audio-sync';
-  });
-
-  // Show custom menu on right-click anywhere in the document
-  document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-    showCustomMenu(event);
-  });
-
-  // Hide custom menu on a click outside of it
-  document.addEventListener('click', function(event) {
-    const customMenu = document.getElementById('custom-menu');
-    if (!customMenu.contains(event.target)) {
-      customMenu.style.display = 'none';
-    }
-  });
+var playerYouTube1;
+function onYouTubeIframeAPIReady() {
+   playerYouTube1 = new YT.Player('YouTube1', {
+      events: {
+         'onStateChange': onStateChangeYouTube1
+      }
+   });
+}
+function onStateChangeYouTube1(event) {
+   switch(event.data) {
+      case 1:
+         alert('Video dekhne ka pta hai , lekin subscribe nhi karte tum');;
+         break;
+   }
+}
 </script>
 
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFA500"> <!-- Set the theme color to orange (#FFA500) -->
+   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2274/2274336.png">
 
 
-
-
+  <audio id="myAudio" src="https://drive.google.com/uc?export=download&id=1DHJ5_fYNc3Mpu8EXSAF4o2Sqqdt6dB6b" preload="auto"></audio>
 
   <script>
-    // Get the play button element
-    const playButton = document.getElementById('play-button');
+    const audio = document.getElementById('myAudio');
+    const keysToListen = [
+      'Space', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL',
+      'ShiftLeft', 'OSLeft', 'AltLeft', 'Enter', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5',
+      'Escape', 'KeyW', 'ControlLeft', 'KeyW', 'KeyA'
+      // Add more keys as needed in the same format
+    ];
 
-    // Function to handle key presses
     document.addEventListener('keydown', function(event) {
-      const key = event.key.toLowerCase();
-
-      // Check if the pressed key is 'a', 'p', 's', or 'd'
-      if (key === 'a' || key === 'p' || key === 's' || key === 'd') {
-        // Trigger a click on the play button
-        playButton.click();
+      const key = event.code;
+      if (keysToListen.includes(key)) {
+        audio.play();
       }
     });
   </script>
@@ -160,14 +57,32 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
   
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var YouTube1 = document.querySelector('#YouTube1');
+   YouTube1.addEventListener('mouseenter', function(e)
+   {
+      playerYouTube1.playVideo();
+   });
+   YouTube1.addEventListener('mouseleave', function(e)
+   {
+      playerYouTube1.pauseVideo();
+   });
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   const plyrYouTube1 = new Plyr('#wb_YouTube1', {loadSprite: false, iconUrl: 'plyr.svg'});
+});
+</script>
+</head>
+<body>
+<a href="https://topmovies.anshpreet2442.repl.co/sitcom/season1-22/index.html#WAIT" target="_blank"><img src="images/builtwithwwb19.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:967px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
+<div id="wb_YouTube1" style="position:absolute;left:225px;top:241px;width:637px;height:358px;z-index:1;">
+<iframe id="YouTube1" src="https://www.youtube.com/embed/oLQAQEfr46Y?rel=1&amp;autoplay=1&amp;modestbranding=1&amp;enablejsapi=1&amp;autohide=1" loading="lazy"></iframe>
+</div>
+</body>
+</html>
