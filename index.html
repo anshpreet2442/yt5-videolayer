@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>YT API HTML5</title>
+<meta name="generator" content="ANSHPREET">
+<link href="plyr.css" rel="stylesheet">
+  <meta name="description" content="Page by Anshpreet">
+<link href="Untitled1.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="plyr.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var playerYouTube1;
+function onYouTubeIframeAPIReady() {
+   playerYouTube1 = new YT.Player('YouTube1', {
+      events: {
+         'onStateChange': onStateChangeYouTube1
+      }
+   });
+}
+function onStateChangeYouTube1(event) {
+   switch(event.data) {
+      case 1:
+         alert('Video dekhne ka pta hai , lekin subscribe nhi karte tum');;
+         break;
+   }
+}
+</script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFA500"> <!-- Set the theme color to orange (#FFA500) -->
+   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2274/2274336.png">
+
+
+  <audio id="myAudio" src="https://drive.google.com/uc?export=download&id=1DHJ5_fYNc3Mpu8EXSAF4o2Sqqdt6dB6b" preload="auto"></audio>
+
+  <script>
+    const audio = document.getElementById('myAudio');
+    const keysToListen = [
+      'Space', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL',
+      'ShiftLeft', 'OSLeft', 'AltLeft', 'Enter', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5',
+      'Escape', 'KeyW', 'ControlLeft', 'KeyW', 'KeyA'
+      // Add more keys as needed in the same format
+    ];
+
+    document.addEventListener('keydown', function(event) {
+      const key = event.code;
+      if (keysToListen.includes(key)) {
+        audio.play();
+      }
+    });
+  </script>
+
+
+
+
+  
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var YouTube1 = document.querySelector('#YouTube1');
+   YouTube1.addEventListener('mouseenter', function(e)
+   {
+      playerYouTube1.playVideo();
+   });
+   YouTube1.addEventListener('mouseleave', function(e)
+   {
+      playerYouTube1.pauseVideo();
+   });
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   const plyrYouTube1 = new Plyr('#wb_YouTube1', {loadSprite: false, iconUrl: 'plyr.svg'});
+});
+</script>
+</head>
+<body>
+<a href="https://topmovies.anshpreet2442.repl.co/sitcom/season1-22/index.html#WAIT" target="_blank"><img src="images/builtwithwwb19.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:967px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
+<div id="wb_YouTube1" style="position:absolute;left:225px;top:241px;width:637px;height:358px;z-index:1;">
+<iframe id="YouTube1" src="https://www.youtube.com/embed/oLQAQEfr46Y?rel=1&amp;autoplay=1&amp;modestbranding=1&amp;enablejsapi=1&amp;autohide=1" loading="lazy"></iframe>
+</div>
+</body>
+</html>
